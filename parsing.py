@@ -77,16 +77,10 @@ def create_cells(all_vertices, poly_list):
 
         polygon_vertex_objects = [] # holds vertex objects
 
-        polygon_vertex_tuples = [] # holds tuples to create polygon
-        # append each vertex to list 
-
         for v in vert_list:
             polygon_vertex_objects.append(all_vertices[v])
-            polygon_vertex_tuples.append((all_vertices[v].x, all_vertices[v].y))
 
-        # this line is going to change when we implement new polygon
-        polygon = Polygon(polygon_vertex_tuples)
-        cell_list.append(cell.Cell(polygon_vertex_objects, polygon))
+        cell_list.append(cell.Cell(polygon_vertex_objects))
 
     return cell_list
 
